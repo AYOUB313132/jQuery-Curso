@@ -1,0 +1,3 @@
+https://oscarotero.com/jquery/
+https://www.w3schools.com/cssref/css_selectors.asp
+https://www.w3schools.com/jquery/default.asp

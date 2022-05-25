@@ -5,8 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
+    <!-- indicamos la liberia de jQuery que tengo descargada -->
+    <script src="scripte/jquery.js"></script>
 </head>
 <body>
-    
+    <p class="one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere dolores animi dicta quam neque voluptas temporibus, nihil eaque expedita deleniti nisi veniam quisquam commodi laborum quae aliquid fugit. Labore.
+    </p>
+    <p class="one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere dolores animi dicta quam neque voluptas temporibus, nihil eaque expedita deleniti nisi veniam quisquam commodi laborum quae aliquid fugit. Labore.
+    </p>
+    <p id="id">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam pariatur quis molestias distinctio libero, quos alias ratione. Fuga voluptatem labore consectetur laboriosam, nisi eius temporibus incidunt, quibusdam eligendi inventore soluta.
+    </p>
+
 </body>
+<script>
+    $(document).ready(function () {
+        $('.one').css('border', 'solid 5px red').css('padding', '15px');
+        $('#id').css({'font-size': '2rem', 'color': 'green'})
+        $('.one').first().css('color','yellow')
+      })
+</script>
 </html>
