@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplos efectos jQuery</title>
     <!-- indicamos la liberia de jQuery que tengo descargada -->
-    <script src="scripte/jquery.js"></script>
+    <script src="/scripte/jquery.js"></script>
     <style>
          h4{margin:8px 0 8px 0;}
         .code{font-family:monospace;font-size:0.9em;color:#5c0578;margin:6px 0 6px 0;}
@@ -32,8 +32,10 @@
     <button class="aBk" id="c3">Cambiar tamaño</button><br/>
     <button class="aBk" id="c4">Ocultar con FadeOut</button><br/>
     <button class="aBk" id="c5">Mostrar con FadeIn</button><br/>
-    <button class="aBk" id="c6">Mover</button><br/>
-    <button class="aBk" id="c7">Cambiar estilo CSS</button><br/>
+    <button class="aBk" id="c6">Slid Up</button><br/>
+    <button class="aBk" id="c7">Slid Down</button><br/>
+    <button class="aBk" id="c8">Mover</button><br/>
+    <button class="aBk" id="c9">Cambiar estilo CSS</button><br/>
 
     <h2>Copiar y escribir texto y HTML con JQuery</h2>
     Al presionar el siguiente botón, se copia el título (h1) de esta página y se pega en un contenedor a continuación en formato de texto.<br/>
@@ -72,5 +74,57 @@
 
 
 </body>
+<script>
+    $('#c1').click(() =>{
+        $('#cont1').hide(3000) // 3000 ms transation
+    })
+    $('#c2').click(() =>{
+        $('#cont1').show(1500)
+    })
+    $('#c1b').click(() =>{
+        $('#cont1').toggle(2000)
+    })
+    $('#c3').click(() =>{
+        $('#cont1').animate({fontFamily: 'Courier, "Lucida Console"'})
+    })
+    $('#c4').click(() =>{
+        $('#cont1').fadeOut(3000)
+    })
+    $('#c5').click(() =>{
+        $('#cont1').fadeIn(3000)
+    })
+    $('#c6').click(() =>{
+        $('#cont1').slideUp(1000)
+    })
+    $('#c7').click(() =>{
+        $('#cont1').slideDown(1000)
+    })
+    $('#c8').click(() =>{
+        $('#cont1')
+    })
+    $('#c9').click(() =>{
+        $('#cont1').css('backgroundColor', 'red')
+    })
+    
+    $('#c12').click(() =>{
+        let texto = $('h1').text()
+        $('#cont3').text(texto)
+    })
+    $('#c13').click(() =>{
+        $('#cont4')
+    })
+    $('#cont2').click(() =>{
+        $(this).hide().delay().show().delay()
+    })
+    $('.yellow').hover(()=>{
+        $('.yellow').addClass('hover')},
+    () => {
+        $('.yellow').removeClass('hover') })
+    $('.texta2').keyup(() =>{
+        let num = $('.texta2').val().slice().length
+        let txt = $('.texta2').val()
+        $('#characters').html('<b>Texto: </b> ' + txt + '<b>Number Caracter: </b>' + num)
+    })
 
+</script>
 </html>
