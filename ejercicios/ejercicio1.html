@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Ejercicio 1</title>
+	<link rel="stylesheet" href="ejercicio1.css" type="text/css" media="screen" />
+	<script src="/jQuery.js"></script>
+
+</head>
+
+<body>
+  <div id="contenedor">    
+    <h2>NOTICIA</h2>
+	<div id="opciones">
+	  <div class="label">Tamaño del texto</div>
+	  <button id="defecto">Por defecto</button>
+	  <button id="mas">Más grande</button>
+	  <button id="menos">Más pequeño</button>
+	</div>
+
+	<div class="noticia">
+	  <p >Mikael Hed, directivo de Angry Birds: "La piratería puede que no sea tan mala"</p>
+	  <p class="oculto">Lo dijo en el momento más inoportuno ante la audiencia más inoportuna. El directivo de Angry Birds Mikael Hed explicó en Cannes (Francia), durante la conferencia de la industria musical Midem, que es "futil" combatir la piratería en los tribunales de justicia y que lo que hay que hacer es aprovecharse de ella. Tras recordarles que Angry Birds sufre las falsificaciones de sus juguetes y todo el merchaising, agregó que hay que aprovechar, sin embargo, esa popularidad que conlleva la piratería para ampliar el negocio. </p>
+	  <a href="#" class="completa">leer más</a>        
+	  <p>"La piratería puede que no sea tan mala. Al final del día se puede hacer más negocio", añadió. Y dijo que había apendido de los errores de la industria musical, que empezó por amenazar a sus consumidores y luego paró. "Nosotros hablamos de ellos como fans. Si crece la base de fans nuestro negocio acabará creciendo.</p>
+	  <p>Finalmente vendió a la audiencia musical la aplicación de sus pájaros enfadados como un buen canal de venta de música.</p> 
+	</div>
+  </div>
+</body>
+<script>
+    $(document).ready(()=>{
+        $('.noticia p:nth-child(2)').css('display', 'none')
+        $('.noticia p:nth-child(4)').css('border', '2px solid black')
+        $('.noticia p:last-child').css('display', 'none')
+
+    })
+        let size = parseInt($('.noticia').css('fontSize'))
+    $('#defecto').click(()=>{
+        size = 12
+        $('.noticia').css('fontSize', size)
+    })
+
+    $('#mas').click(()=>{
+
+        size +=2
+        $('.noticia').css('fontSize', size)
+    })
+    $('#menos').click(()=>{
+
+        size -=2
+        $('.noticia').css('fontSize', size)
+    })
+    $('.completa').click(()=>{
+        if ($('.completa').text() == 'leer más') {
+            $('.noticia p:nth-child(2)').slideDown(1500)
+            $('.completa').text('leer menos')
+        }else if ($('.completa').text() == 'leer menos') {
+            $('.noticia p:nth-child(2)').slideUp(1500)
+            $('.completa').text('leer más')
+        }
+    })
+    $('.noticia p:nth-child(4)').click(()=>{
+        $('.noticia p:last-child').slideDown(1500)
+        $('.noticia p:last-child').css('backgroundColor', '#777')
+    })
+    $('.noticia p:last-child').click(()=>{
+        $('.noticia p:last-child').slideUp(1500)
+    })
+</script>
+</html>

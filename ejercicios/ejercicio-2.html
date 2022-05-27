@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Menu desplegable</title>
+<script type="text/javascript" src="/jQuery.js"></script>
+
+
+</head>
+
+
+<body>
+<h1>Menu desplegable</h1>
+
+<ul id="listaprincipal">
+   <li><a href="#">PERIODICOS DEPORTIVOS</a>
+      <ul>
+         <li><a href="http://www.marca.com">MARCA</a></li>
+         <li><a href="http://www.sport.es">SPORT</a></li>
+         <li><a href="http://www.as.com">AS</a></li>
+      </ul>
+   </li>
+   <li><a href="#">OFFTOPIC</a>
+      <ul>
+         <li><a href="http://www.ascodevida.com">ADV</a></li>
+         <li><a href="http://www.vistoenfb.com">VEF</a></li>
+         <li><a href="http://www.cuantocabron.com">CC</a></li>
+      </ul>
+   </li>
+   <li><a href="#">NOTICIAS</a>
+      <ul>
+         <li><a href="http://www.meneame.net">MENEAME</a></li>
+         <li><a href="http://www.barrapunto.com">BARRAPUNTO</a></li>
+         <li><a href="http://www.elmundotoday.com">EL MUNDO TODAY</a></li>
+      </ul>
+   </li>
+	
+<ul>
+</body>
+<script>
+    $(document).ready(()=>{
+        $('#listaprincipal').css('display', 'none')
+    })
+
+$('h1').mouseover(function () {
+            //li a[href='#']"
+            $("#listaprincipal").slideDown(1500);
+            $("#listaprincipal li ul").slideUp();
+            $("#listaprincipal").append('<li><a href="#">CONTACT</a>')
+               });
+$('h1').mouseout(function () {
+    //$('#listaprincipal ').show()
+        $("#listaprincipal").slideUp(1000);
+        $("#listaprincipal li").slideUp();
+        });
+    
+</script>
+</html>
