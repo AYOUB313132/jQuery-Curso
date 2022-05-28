@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3</title>
+    <script type="text/javascript" src="/jQuery.js"></script>
+</head>
+
+<body>
+    <h1>EJERCICIO 3</h1>
+    <hr />
+    <h2>Ejercicio 1</h2>
+    <!--Cuando pulsemos el botón mostraremos un prompt para que el usuario introduzca un texto. 
+Una vez cerrado el prompt el valor se añadirá como un nuevo <li> a la lista creada. 
+Además, los botones “Borrar primer elemento de la lista” y “Borrar último elemento de la lista” 
+borrarán el primer elemento de la lista y el último respectivamente.-->
+    <p>
+        <ul>
+            <li>Lunes</li>
+            <li>Martes</li>
+            <li>Miércoles</li>
+            <li>Jueves</li>
+            <li>Viernes</li>
+        </ul>
+    </p>
+    <input id="anyadir" type="button" value="Añadir elemento de la lista" />
+    <input id="borrarPrimero" type="button" value="Borrar primer elemento de la lista" />
+    <input id="borrarUltimo" type="button" value="Borrar último elemento de la lista" />
+
+
+    <hr />
+    <h2>Ejercicio 2</h2>
+    <p>Hola, ¿tu nombre y año de nacimiento?</p>
+    Nombre: <input type="text" id="nombre"> Año de nacimiento: <input type="number" id="fechanac" name="fechanac" min="1999" max="2019">
+    <input type="button" id="saludar" value="saludar" />
+    <p id="salida"></p>
+    <!-- Aquí se mostrará lo que pide el ejercicio -->
+
+    <hr />
+    <h2>Ejercicio 3</h2>
+    <!--Generar clave: pedimos al usuario el nombre y al pulsar el botón generaremos y visualizaremos la 
+clave que vamos a construir.
+
+La clave a construir tiene que tener el siguiente formato:
+
+    - La primera letra del nombre en minúsculas + un asterisco+ El mes actual en número con el siguiente 
+formato: 01, 02, 03, …12 + un asterisco+ un ampersand(&)+ un asterisco+ las dos últimas letra del 
+nombre en mayúsculas.
+    - Deberemos comprobar al pulsar el botón que el nombre tiene al menos 4 letras. Si no, sacaremos un 
+mensaje (alert) indicando el error-->
+    <p>Introduce tu nombre de usuario: </p>
+    <input type="text" id="nomUsu" />
+    <input id="generarClave" type="button" value="generar clave" />
+    <p id="resultado"></p>
+
+</body>
+<script>
+    $(document).ready(() => {
+        // premiro
+        $('#anyadir').click(() => {
+                let day = prompt('add day');
+                $('ul').append('<li>' + day + '</li>')
+
+            }),
+            $('#borrarPrimero').click(() => {
+                $('ul li:first-child').remove()
+            }),
+            $('#borrarUltimo').click(() => {
+                $('ul li:last-child').remove()
+            })
+            // secondo
+
+        let nombre = $('#nombre')
+        let fechanac = $('#fechanac')
+        $('#saludar').click(() => {
+            if (fechanac.val() <= 2004) {
+                $('#salida').html('hola <b>' + nombre.val() + '</b>, Eres <b>Mayor</b>')
+            } else {
+                $('#salida').html('hola <b>' + nombre.val() + '</b>, Eres <b>Menor</b> de Edad')
+            }
+
+
+        })
+        let car = ['*', '/', '#', '@', '&']
+        let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        $('#generarClave').click(() => {
+            let usuario = $('#nomUsu').val();
+            let first = usuario.last()
+
+            console.log(first)
+
+        })
+    })
+</script>
+
+</html>
