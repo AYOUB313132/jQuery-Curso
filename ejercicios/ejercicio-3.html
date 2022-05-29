@@ -86,10 +86,9 @@ mensaje (alert) indicando el error-->
         let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         $('#generarClave').click(() => {
             let usuario = $('#nomUsu').val();
-            let first = usuario.last()
-
-            console.log(first)
-
+            let first = usuario.slice(0, 1)
+            let last = usuario.slice(usuario.length - 2, usuario.length)
+            $('#resultado').text(first + '*0/5@8*' + last)
         })
     })
 </script>
