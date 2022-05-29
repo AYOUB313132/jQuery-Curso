@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>EJERCICIO 4</title>
+    <style type="text/css">
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        body>ul>li {
+            border: 3px solid #000000;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #redesI,
+        #redesY {
+            display: none;
+        }
+        
+        #rrss {
+            display: flex;
+        }
+        
+        #rrss li {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body>ul li ul {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+    <script src="/jQuery.js"></script>
+
+</head>
+
+<body>
+    <h1>REDES SOCIALES</h1>
+    <ul id="rrss">
+        <!-- Instagram -->
+        <li>
+            INSTAGRAM
+
+            <ul id="redesI">
+                <li><img src="image/instagram.png" /></li>
+                <li><img src="image/instagram2.png" /></li>
+            </ul>
+
+            <button>Ver iconos</button>
+            <button>Eliminar rrss</button>
+        </li>
+
+        <!-- Youtube -->
+        <li>
+            YOUTUBE
+
+            <ul id="redesY">
+                <li><img src="image/youtube.png" /></li>
+                <li><img src="image/youtube2.png" /></li>
+            </ul>
+
+            <button>Ver iconos</button>
+            <button>Eliminar rrss</button>
+        </li>
+
+
+    </ul>
+    <button>Reiniciar</button>
+
+
+</body>
+<script>
+    $(document).ready(() => {
+        $('#rrss li:first button').click(function() {
+
+            if ($(this).text() == 'Ver iconos') {
+                $(this).text('ocultar iconos')
+                $('#redesI').slideDown(1500)
+                    // alert('Bienvined@ a Instagram !')
+            } else if ($(this).text() == 'ocultar iconos') {
+                $(this).text('Ver iconos')
+                $('#redesI').slideUp(1500)
+            } else if ($(this).text() == 'Eliminar rrss') {
+                alert('agur INSTAGRAM !')
+                $(this).parent('li').hide()
+            }
+        });
+        $('#rrss li:last-child button').click(function() {
+
+            if ($(this).text() == 'Ver iconos') {
+                $(this).text('ocultar iconos')
+                $('#redesY').slideDown(1500)
+                    // alert('Bienvined@ a Instagram !')
+            } else if ($(this).text() == 'ocultar iconos') {
+                $(this).text('Ver iconos')
+                $('#redesY').slideUp(1500)
+            } else if ($(this).text() == 'Eliminar rrss') {
+                alert('agur YOUTUBE !')
+                $(this).parent('li').hide()
+            }
+        });
+        $('button:contains("Reiniciar")').click(() => {
+            $('#rrss li').slideDown(1000)
+        })
+
+    })
+</script>
+
+</html>
