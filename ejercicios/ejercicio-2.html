@@ -56,7 +56,7 @@
                             $("#listaprincipal li").slideUp();
                             });
                       */
-    $(document).ready(() => {
+  /*  $(document).ready(() => {
         $('#listaprincipal').hide();
         $("#listaprincipal").append('<li><a href="#">CONTACT</a>')
         $('h1').hover(() => {
@@ -92,6 +92,22 @@
             )
 
     })
+*/
+    /* otro sloccion */
+    $(document).ready(function(){
+      $('ul').css({display:"none"}); //oculto todas las listas que tengo
+      $('h1').mouseenter(function(){
+         $('#listaprincipal').show(1500);
+      });
+      $('#listaprincipal').mouseleave(function(){
+         $('#listaprincipal').hide(1500);
+      });
+      //hover sobre listas anidadas
+      $('ul li:has(ul)').hover(
+         function(){$(this).find('ul').css({display:"block"});},
+         function(){$(this).find('ul').css({display:"none"});}
+      );
+   });
 </script>
 
 </html>
