@@ -87,10 +87,65 @@ mensaje (alert) indicando el error-->
         $('#generarClave').click(() => {
             let usuario = $('#nomUsu').val();
             let first = usuario.slice(0, 1)
-            let last = usuario.slice(usuario.length - 2, usuario.length)
-            $('#resultado').text(first + '*0/5@8*' + last)
+            let last = usuario.slice(-2)
+            $('#resultado').text(first.toUpperCase() + '*0/5@8*' + last)
         })
-    })
+    });
+
+    // otra solucion 
+    /*
+    $(document).ready(function(){
+        //añadir elemento a la lista
+        $("#anyadir").click(function(){
+            let texto= prompt("Introduce un nuevo elemento para la lista");
+            $("ul").append("<li>"+texto+"</li>");
+        });
+        //borrar el primer elemento
+        $("#borrarPrimero").click(function(){
+           $("li:first-child").remove();
+        });
+        //borrar el último elemento
+        $("#borrarUltimo").click(function(){
+            $("li:last-child").remove();
+        });
+        //EJERCICIO 2: saludamos 
+        let fechaActual = new Date();
+        $("#saludar").click(function(){
+            let nombre = $("#nombre").val();
+            let anyoNac = $("#fechanac").val();
+            let texto = "¡ Hola "+nombre + " ! Eres ";
+            if(fechaActual.getFullYear()-anyoNac>=18){
+                texto += ' MAYOR de edad';
+            }else{
+                texto += ' MENOR de edad';
+            }
+            $("#salida").text(texto);
+            $("#nombre").val("");
+            $("#fechanac").val(""); 
+        });
+        //generar clave
+        $("#generarClave").click(function(){
+            let nomUsu = $("#nomUsu").val();
+            if(nomUsu.length >= 4){
+                let pass = nomUsu.charAt(0).toLowerCase();
+                pass += '*';
+                let mes = fechaActual.getMonth()+1;
+                if (mes<10){
+                    pass += '0'+ mes;
+                }else{
+                    pass += mes;
+                }
+                pass += '*&*';
+                //pass += nomUsu.substring(nomUsu.length-2,nomUsu.length).toUpperCase();
+                pass += nomUsu.slice(-2).toUpperCase();
+                $("#resultado").text(pass);
+            }else{
+                alert("El nombre de usuario debe tener al menos 4 caracteres");
+            }
+        });
+    });
+    */
+
 </script>
 
 </html>
