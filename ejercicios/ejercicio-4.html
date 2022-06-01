@@ -78,6 +78,7 @@
 
 </body>
 <script>
+    /*
     $(document).ready(() => {
         $('#rrss li:first button').click(function() {
 
@@ -116,6 +117,23 @@
         })
 
     })
+    */
+    $(document).ready(() => {
+        $('button').click(function() {
+
+            if ($(this).text() == 'Ver iconos') {
+                $(this).text('ocultar iconos')
+                $(this).prev().slideDown(1500)
+            }else if ($(this).text() == 'ocultar iconos'){
+                $(this).text('Ver iconos')
+                $(this).prev().slideUp(1500)
+            }else if ($(this).text() == 'Eliminar rrss'){
+                $(this).parent('li').hide()
+            } else if ($(this).text() == "Reiniciar") {
+                $(this).parent('li').slideDown(1000)
+            }
+        });
+    });
 </script>
 
 </html>
