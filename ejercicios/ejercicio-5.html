@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <title>EJERCICIO 8 JAVASCRIPT ECMA6</title>
+</head>
+
+<body>
+    <p>
+        lunes = Astelehena<br>
+martes = Asteartea <br>
+miercoles = Asteazkenabr <br>
+jueves = Osteguna <br>
+viernes = Ostirala <br>
+    </p>
+    <h1>A jugarrrrrr</h1>
+    <section>
+        <p>Debes emparejar las palabras de arriba con las de abajo.</p>
+        <p>Llevas <strong>0</strong> intentos</p>
+
+        <fieldset>
+            <legend>CASTELLANO</legend>
+
+
+            <p>
+                <input type="radio" name="castellano" value="Lunes"><label>Lunes</label><br>
+                <input type="radio" name="castellano" value="Martes"><label>Martes</label><br>
+                <input type="radio" name="castellano" value="Miércoles"><label>Miércoles</label><br>
+                <input type="radio" name="castellano" value="Jueves"><label>Jueves</label><br>
+                <input type="radio" name="castellano" value="Viernes"><label>Viernes</label><br>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>EUSKERA</legend>
+
+
+            <p>
+                <input type="radio" name="euskera" value="Asteartea"><label>Asteartea</label><br>
+                <input type="radio" name="euskera" value="Astelehena"><label>Astelehena</label><br>
+                <input type="radio" name="euskera" value="Osteguna"><label>Osteguna</label><br>
+                <input type="radio" name="euskera" value="Ostirala"><label>Ostirala</label><br>
+                <input type="radio" name="euskera" value="Asteazkena"><label>Asteazkena</label><br>
+            </p>
+
+        </fieldset>
+        <section>
+            <button id="emparejar">emparejar </button><br />
+            <button id="solucion">ver solución</button>
+
+            <br /><br />
+            <button id="reiniciar">volver a jugar</button><br />
+
+        </section>
+
+
+</body>
+<script src="/jQuery.js"></script>
+<script>
+/*
+lunes = Astelehena
+martes = Asteartea
+miercoles = Asteazkena
+jueves = Osteguna
+viernes = Ostirala
+*/
+    $(document).ready(function (e){
+        /*
+        $( "input:radio ").each(function (){
+            $('#emparejar').on('click', function () {
+                if($(this).is(':checked[value="Asteartea"]') == $(this).is(':checked[value="martes"]')){
+                    console.log('yes')
+                    console.log($(this).val())
+            }else{
+                console.log('nada')
+            }
+              })
+        })
+        */
+        $('#emparejar').on('click', function () {
+            if($('input:radio').is(':checked') == false){
+                console.log('plz checked')
+            }
+            if($('input:radio[name="euskera"][value="Astelehena"]').is(':checked') && $('input:radio[name="castellano"][value="Lunes"]').is(':checked')){
+                console.log('yes')
+                $('input:radio[name="castellano"][value="Lunes"]').hide()
+                $('input:radio[name="castellano"][value="Lunes"] + label').hide()
+                $('input:radio[name="euskera"][value="Astelehena"]').hide()
+                $('input:radio[name="euskera"][value="Astelehena"] + label').hide()
+            }else if($('input:radio[name="euskera"][value="Asteartea"]').is(':checked') && $('input:radio[name="castellano"][value="Martes"]').is(':checked')){
+                console.log('yes')
+            }else if($('input:radio[name="euskera"][value="Asteazkena"]').is(':checked') && $('input:radio[name="castellano"][value="Miercoles"]').is(':checked')){
+                console.log('yes')
+            }else if($('input:radio[name="euskera"][value="Osteguna"]').is(':checked') && $('input:radio[name="castellano"][value="Jueves"]').is(':checked')){
+                console.log('yes')
+            }else if($('input:radio[name="euskera"][value="Ostirala"]').is(':checked') && $('input:radio[name="castellano"][value="Viernes"]').is(':checked')){
+                console.log('yes')
+            }else{
+                console.log('not egual')
+            }
+        })
+    })
+</script>
+</html>
