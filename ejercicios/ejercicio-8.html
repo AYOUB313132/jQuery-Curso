@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>EJERCICIO 10 JAVASCRIPT ECMA6</title>
+
+   
+</head>
+
+<body onload="iniciar();">
+    <h1>EJERCICIO 10 JAVASCRIPT ECMA6</h1>
+    <h2>TIENDA</h2>
+    <h3>¡Vamos a comprar!</h3>
+   <section>
+    <input type="text" id="nombre" placeholder="escribe aqui tu nombre">
+    <input type="button" value="entrar" onclick="entrar();">   
+    </section>
+
+    <section>
+        <p id="mensaje"></p>
+        <fieldset>
+            <legend>ESCAPARATE</legend>
+
+            <section id="Productos">
+                <p>
+                    <span class="nombreProducto">Camiseta blanca M <span class="precio">25</span>€</span>
+                    <input type="number" name="cantidad" value="1" min="1" max="20" step="1" />
+                    <input type="button" value="comprar" onclick="comprar(this);">
+                </p>
+                <hr />
+                <p>  
+                    <span class="nombreProducto">Vaqueros negros T38 <span class="precio">60</span>€</span>
+                    <input type="number" name="cantidad" value="1" min="1" max="20" step="1" />
+                    <input type="button" value="comprar" onclick="comprar(this);">
+                </p>
+                <hr />
+                <p>
+                    <span class="nombreProducto">Zapatillas verdes T.36 <span class="precio">45</span>€</span>
+                    <input type="number" name="cantidad" value="1" min="1" max="20" step="1" />
+                    <input type="button" value="comprar" onclick="comprar(this);">
+                </p>
+                <hr />
+                <p>
+                   
+                    <span class="nombreProducto">Calcetines lunares <span class="precio">6</span>€</span>
+                    <input type="number" name="cantidad" value="1" min="1" max="20" step="1" />
+                    <input type="button" value="comprar" onclick="comprar(this);">
+                </p>
+                <hr />
+
+            </section>
+        </fieldset>
+        <section>
+            <button id="verCarrito" onclick="verCarrito();">ver carrito </button><button id="vaciarCarrito" onclick="vaciarCarrito();">vaciar carrito </button><br />
+        </section>
+       
+    </section>
+
+
+</body>
+<script>
+    let sections = document.getElementsByTagName('section')
+    function iniciar () {
+        sections[1].style.display = 'none'
+    }
+    function entrar () {
+        let nombre = document.getElementById('nombre')
+        let h3 = document.getElementsByTagName('h3') 
+        h3[0].textContent = '¡ Hola ' + nombre.value + '! ¡Feliz compra'
+        sections[0].style.display = 'block'
+    }
+</script>
+   
+</html>

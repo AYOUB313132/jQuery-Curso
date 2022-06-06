@@ -90,13 +90,14 @@
             let total = 0;
             $('.precioActualizado').each(function(){
                 
-                 console.log($(this).html())
-                $('#TotalAPagar').text($(this).text())
+                 total += parseInt($(this).text())
+                 console.log(total)
+                $('#TotalAPagar').text(total)
             })
           })         
     })
     let check = document.querySelectorAll('[type="checkbox"]')
-    console.log(check.length)
+    /*console.log(check.length)*/
 
     function actualizarProducto(){
 
